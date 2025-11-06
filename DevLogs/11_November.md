@@ -59,9 +59,9 @@
   - Observer -> Instrument (for example Bond).
   - Observable -> Data (for example YieldTermStructure).
 
-- Instrument inherits 'LazyObject' so it is an Observer (and also and Obeservable but see later). It has therefore an `update()` method that is called when an observable changes in value/source.
+- Instrument inherits `LazyObject` so it is an Observer (and also and Obeservable but see later). It has therefore an `update()` method that is called when an observable changes in value/source.
 
-- How ? by using a handle i.e. a pointer to a pointer. For example
+- How to implement a logic that allows to have an update when there is a change in value or in source ? by using a handle i.e. a pointer to a pointer. For example
 
     ```cpp
     Handle<Quote> rate;
@@ -79,7 +79,7 @@
   - If source changee, the entire object Quote is changed. If Instrument stores just pointer, the pointer will point to the old object anyway.
 
     ```cpp
-    // Example 1: pointer — reacts to value change
+    // Pointer - reacts to value change
 
     class Instrument {
         MarketData* data;
@@ -102,7 +102,7 @@
     ```
 
     ```cpp
-    // Example 2: pointer-to-pointer — reacts to source change
+    // Pointer-to-pointer - reacts to source change
 
     class Instrument {
         MarketData** handle;
@@ -121,5 +121,26 @@
     activeFeed = &reuters;
     cout << bond.NPV(); // now prints with 4%
     ```
+
+## ☀️ 6 November 2025
+
+- So with `handle`, instruments are updated if there is a change in value or in source. However, to improve performance the class `lazyObject` is used. This class takes care of two things:
+  - *Lazyness* i.e. computes value only when necessary.
+  - *Caching* i.e. store those values once computed.
+
+- To be precise:
+  - The computations (`performCalculations()`) has to be anyway implemented by derived classes.
+  - Cashing is taking care by the base class `lazyObject` in the sense that the `calculated_` flag is set in the base. However, the value `NPV_` is store at instrument level. Also instrument has to decorate `calculate()`.
+
+- In summary `lazyobject` has:
+  - virtual `calculate()` -> const.
+  - mutable bool `calculated_` : This is used in `calculate()`. It is mutable because when a new value is assigned to a data member, the object’s state is mutating! The C++ `const` contract is: no modification of object state in const methods. So `calculated_` needs to be declared mutable.
+  - virtual `performCalculation()` -> const.
+  - void `update()`. This set the `calculate_` flag to false.
+
+- `Instrument` inherits from `lazyobject`:
+  - real `NPV()` -> const
+  - mutable `NPV_`. For same reason as before.
+  - `calculate()` -> const. Decorates `calculate()` in `lazyobject` to check if the instrument is expired.
 
 ## Pricing Engines
