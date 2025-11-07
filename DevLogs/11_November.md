@@ -1,6 +1,6 @@
 # November
 
-## ☀️ 1 November 2025
+## ☀️ 1 November 2025 - Saturday
 
 - Checking the `ql` folder:
   - `cashflows`
@@ -12,7 +12,7 @@
   - `math`
   - `methods`
   - `models`
-  - `patterns`:
+  - `patterns`
   - `pricingengines`
   - `processes`
   - `quotes`
@@ -40,20 +40,24 @@
        - In source
      - If market data doesn't change, then use a cashed value.
 
-## ☀️ 2 November 2025
+## ☀️ 2 November 2025 - Sunday
 
 ### Financial Instruments - Implementation
 
 - Useful link! : [Quantlib-Python Documentation](https://quantlib-python-docs.readthedocs.io/en/latest/indexes.html#histories)
 
-- Before continuing with [Implementing Quantlib](https://leanpub.com/implementingquantlib), I compiled the quantlib documentation in the library i.e. `make docs`. Quantlib uses Doxygen. Was wondering if there is an equivalent in Rust. There is. It's rustdoc which is built in rust by defaults. It seems cool. To keep in mind.
+- Compiled the quantlib documentation in the library i.e. `make docs`. Quantlib uses Doxygen. Was wondering if there is an equivalent in Rust. There is. It's rustdoc which is built in rust by defaults. It seems cool. To keep in mind.
+
+- Link to the explanations by Ballabio: [Implementing Quantlib - Financial instruments](https://www.implementingquantlib.com/2013/07/chapter-2-part-1-of-4-financial.html)
 
 - To undertand the implementation of the [second requirement](11_November.md#L36) we are goint to need following main components:
   - `instrument.cpp` is in `instruments` folder.
   - `lazyobject.cpp` is in `patterns`folder.
   - `handle.cpp` is in `ql` folder, in the `loose section`.
 
-## ☀️ 4 November 2025
+## ☀️ 4 November 2025 - Tuesday
+
+### Financial Instruments - Implementation - Part II
 
 - So there are two types of objects:
   - Observer -> Instrument (for example Bond).
@@ -122,7 +126,9 @@
     cout << bond.NPV(); // now prints with 4%
     ```
 
-## ☀️ 6 November 2025
+## ☀️ 6 November 2025 - Thursday
+
+### Financial Instruments - Implementation - Part III
 
 - So with `handle`, instruments are updated if there is a change in value or in source. However, to improve performance the class `lazyObject` is used. This class takes care of two things:
   - *Lazyness* i.e. computes value only when necessary.
@@ -143,4 +149,26 @@
   - mutable `NPV_`. For same reason as before.
   - `calculate()` -> const. Decorates `calculate()` in `lazyobject` to check if the instrument is expired.
 
+## ☀️ 7 November 2025 - Friday
+
+### Financial Instruments - Implementation - Part IV
+
+- To consolidate all the info from previous day, reading [IRS example](https://www.implementingquantlib.com/2013/07/chapter-2-part-2-of-4-example.html) is very useful. Expecially the class diagram of the Swap class.
+
+- In the IRS, cash flows are pointers while term structure is a handle, because cash flows are inherently linked to the swap, they cannot be changed. On the other hand, you can use different curves to price the same swap.
+
+- Important points so far (will tackled later)
+  - How legs with different currencies are handled ?
+  - Is there clear separation:
+    - Data specifying the contract (info needed to define the cash flows)
+    - Market data (discount cuve)
+
 ## Pricing Engines
+
+Notes:
+
+- Important points (from old version of the book, maybe now they are fixed):
+  - How legs with different currencies are handled ?
+  - Is there clear separation:
+    - Data specifying the contract (info needed to define the cash flows)
+    - Market data (discount cuve)
