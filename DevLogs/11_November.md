@@ -163,7 +163,7 @@
     - Data specifying the contract (info needed to define the cash flows)
     - Market data (discount cuve)
 
-## ☀️ 11 November 2025 - Friday
+## ☀️ 11 November 2025 - Tuesday
 
 - Started reading also [Tour of C++, Third Edition](https://amzn.eu/d/0ZElGvE) by Bjarne Stroustrup.
 
@@ -171,7 +171,7 @@
 
 ### Tour of C++ | Chapter 1 | The Basics
 
-## ☀️ 12 November 2025 - Friday
+## ☀️ 12 November 2025 - Wednesday
 
 ### Tour of C++ | Chapter 2 | The User-Defined Type
 
@@ -180,12 +180,32 @@
 - Enumerations
 - Unions
 
-## ☀️ 13 November 2025 - Friday
+## ☀️ 13 November 2025 - Thursday
 
 ### Tour of C++ | Chapter 3 | Modularity
 
 - Separate Compilation
 - Namespaces
+
+## ☀️ 14 November 2025 - Friday
+
+### Tour of C++ | Chapter 3 | Modularity - Part 2
+
+- Functions Arguments and Return Values
+
+## ☀️ 15 November 2025 - Saturday
+
+### Tour of C++ | Chapter 4 | Error Handling
+
+- Exception
+- Invariants
+- Error Handling Alternatives
+
+## ☀️ 16 November 2025 - Sunday
+
+### Tour of C++ | Chapter 4 | Error Handling - Part 2
+
+- Assertions
 
 ## Pricing Engines
 
