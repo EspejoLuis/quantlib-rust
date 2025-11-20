@@ -210,7 +210,23 @@
 ### Tour of C++ | Chapter 5 | Classes
 
 - Concrete Classes
-- Containter
+- Container (with representation)
+
+## ☀️ 18 November 2025 - Tuesday
+
+### Tour of C++ | Chapter 5 | Classes - Part 2
+
+- Abstract Classes (no representation)
+
+## ☀️ 20 November 2025 - Thursday
+
+### Tour of C++ | Chapter 5 | Classes - Part 3
+
+- Virtual Functions
+- Class Hierarchies:
+  - Benefits from Hierarchies:
+
+A lot about virtual/override and also about vptr and vtbl.
 
 ## Pricing Engines
 
