@@ -228,6 +228,14 @@
 
 A lot about virtual/override and also about vptr and vtbl.
 
+## ☀️ 21 November 2025 - Friday
+
+### Tour of C++ | Chapter 5 | Classes - Part 4
+
+- Class Hierarchies:
+  - Hierarchy Navigation
+  - Avoiding resource leaks
+
 ## Pricing Engines
 
 Notes:
