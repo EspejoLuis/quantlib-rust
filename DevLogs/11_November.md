@@ -233,8 +233,18 @@ A lot about virtual/override and also about vptr and vtbl.
 ### Tour of C++ | Chapter 5 | Classes - Part 4
 
 - Class Hierarchies:
-  - Hierarchy Navigation
-  - Avoiding resource leaks
+  - Hierarchy Navigation.
+  - Avoiding resource leaks.
+
+## ☀️ 24 November 2025 - Monday
+
+### Tour of C++ | Chapter 6 | Essential Operations
+
+- Introduction:
+  - Conversions
+  - Member initializers
+- Copy and Move:
+  - Copying containers: copy constructor and copy assignment.
 
 ## Pricing Engines
 
