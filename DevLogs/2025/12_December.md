@@ -4,6 +4,12 @@
 
 - Trying [Exercism](https://exercism.org/dashboard) for practicing both in Rust and C++. Could be good.
 
+## ☀️ 2 December 2025 - Monday
+
+- Doing exercise on C++ and Rust path in [Exercism](https://exercism.org/dashboard)
+
+
+
 ## Pricing Engines
 
 Notes:
