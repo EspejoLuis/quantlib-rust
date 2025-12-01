@@ -265,4 +265,3 @@ A lot about virtual/override and also about vptr and vtbl.
 - Parametrized Types
 - Constrained Templates
 - Value Templates
-
