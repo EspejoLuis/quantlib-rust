@@ -246,12 +246,23 @@ A lot about virtual/override and also about vptr and vtbl.
 - Copy and Move:
   - Copying containers: copy constructor and copy assignment.
 
-## Pricing Engines
+## ☀️ 29 November 2025 - Saturday
 
-Notes:
+### Tour of C++ | Chapter 6 | Essential Operations - Part II
 
-- Important points (from old version of the book, maybe now they are fixed):
-  - How legs with different currencies are handled ?
-  - Is there clear separation:
-    - Data specifying the contract (info needed to define the cash flows)
-    - Market data (discount cuve)
+- Copying Containers
+- Moving Containers
+- Resource Management
+- Operator Overloading
+- Conventional Operation
+- Container Operations
+- User-Defined literals
+
+## ☀️ 30 November 2025 - Sunday
+
+### Tour of C++ | Chapter 7 | Templates
+
+- Parametrized Types
+- Constrained Templates
+- Value Templates
+
