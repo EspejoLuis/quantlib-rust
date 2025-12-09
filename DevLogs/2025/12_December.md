@@ -8,7 +8,9 @@
 
 - Doing exercise on C++ and Rust path in [Exercism](https://exercism.org/dashboard)
 
+## ☀️ 9 December 2025 - Monday
 
+- Better to split the Quantlib c++ and rust part. I'm creating a specific Quantlib C++ folder as playground for c++ and updates on Implementing QuantLib. 
 
 ## Pricing Engines
 
